@@ -36,14 +36,14 @@ function ListingEditScreen() {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        <FormField maxLength={255} name="title" placeholder="Title" />
+        <FormField maxLength={255} name="title" placeholder="Titre" />
         <FormField
           keyboardType="numeric"
           maxLength={8}
           name="price"
-          placeholder="Price"
+          placeholder="Prix"
         />
-        <Picker items={categories} name="category" placeholder="Category" />
+        <Picker items={categories} name="category" placeholder="Categories" />
         <FormField
           maxLength={255}
           multiline
@@ -51,7 +51,7 @@ function ListingEditScreen() {
           numberOfLines={3}
           placeholder="Description"
         />
-        <SubmitButton title="Post" />
+        <SubmitButton title="Publier" />
       </Form>
     </Screen>
   );
