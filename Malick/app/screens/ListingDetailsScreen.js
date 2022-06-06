@@ -1,21 +1,24 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import AppText from '../components/AppText';
-import ListItem from '../components/ListItem';
 
 import colors from '../config/colors';
-function ListingDetailsScreen(props) {
+import ListItem from '../components/lists/ListItem';
+import Text from '../components/Text';
+
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
+
   return (
     <View>
-      <Image style={styles.image} source={require('../assets/img2.jpg')} />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>T-shirt Noir</AppText>
-        <AppText style={styles.price}>15€</AppText>
+        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.price}>${listing.price}</Text>
         <View style={styles.userContainer}>
           <ListItem
             image={require('../assets/malick.jpg')}
-            title="Malick Siguy Ndiaye"
-            subTitle="5 Listes"
+            title="Malick Siguy NDIAYE"
+            subTitle="5 Listings"
           />
         </View>
       </View>
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 200,
+    height: 300,
   },
   price: {
     color: colors.secondary,
